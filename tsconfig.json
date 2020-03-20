@@ -1,0 +1,19 @@
+{
+    "compilerOptions": {
+        "target": "es5",
+        "outDir": "lib",
+        "rootDir": "./src",
+        "sourceMap": true,
+        "noImplicitAny": true,
+        "module": "commonjs",
+        "moduleResolution": "node",
+        "jsx": "react",
+        "allowSyntheticDefaultImports": true,
+        "lib": ["es6", "dom"],
+        "strict": true,
+        "declaration": true,
+        "declarationDir": "./lib"
+    },
+    "include": ["src"],
+    "exclude": ["node_modules"]
+}

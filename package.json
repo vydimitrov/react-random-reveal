@@ -1,0 +1,45 @@
+{
+  "name": "react-flip-flop",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./lib/index.js",
+  "scripts": {
+    "build": "webpack",
+    "prepare": "install-peers",
+    "test": "jest --config jestconfig.json",
+    "test-watch": "jest --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vydimitrov/react-flip-flop.git"
+  },
+  "keywords": [
+    "React"
+  ],
+  "author": "Vasil Dimitrov",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/vydimitrov/react-flip-flop/issues"
+  },
+  "homepage": "https://github.com/vydimitrov/react-flip-flop#readme",
+  "peerDependencies": {
+    "react": "^16.8.0",
+    "react-dom": "^16.8.0"
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.4.0",
+    "@types/react": "^16.9.23",
+    "@types/react-dom": "^16.9.5",
+    "codecov": "^3.6.1",
+    "install-peers-cli": "^2.1.1",
+    "jest": "^24.9.0",
+    "path": "^0.12.7",
+    "react-test-renderer": "^16.8.0",
+    "source-map-loader": "^0.2.4",
+    "ts-loader": "^6.2.1",
+    "typescript": "^3.8.3",
+    "webpack": "^4.42.0",
+    "webpack-cli": "^3.3.11"
+  }
+}
