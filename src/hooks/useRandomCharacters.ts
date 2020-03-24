@@ -12,7 +12,7 @@ type Data = {
 	charactersData: CharactersData
 }
 
-export const useFlipCharacters = ({
+export const useRandomCharacters = ({
 	isPlaying,
 	speed,
 	characterSet,

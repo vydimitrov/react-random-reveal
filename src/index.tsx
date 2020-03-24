@@ -1,9 +1,9 @@
 import React, { useMemo } from 'react'
-import { FlipFlopProps, CharactersData } from './types'
-import { useFlipCharacters } from './hooks'
+import { RandomRevealProps, CharactersData } from './types'
+import { useRandomCharacters } from './hooks'
 import { defaultCharacterSet, getCharactersData } from './utils'
 
-const useFlipFlop = (props: FlipFlopProps): string => {
+const useRandomReveal = (props: RandomRevealProps): string => {
 	const {
 		isPlaying,
 		duration,
@@ -28,7 +28,7 @@ const useFlipFlop = (props: FlipFlopProps): string => {
 		})
 	}, [duration, characters, revealDuration, revealEasing, ignoreCharacterSet])
 
-	return useFlipCharacters({
+	return useRandomCharacters({
 		isPlaying,
 		speed,
 		characterSet,
@@ -38,10 +38,10 @@ const useFlipFlop = (props: FlipFlopProps): string => {
 	})
 }
 
-const FlipFlop = (props: FlipFlopProps) => {
-	const nextCharacters = useFlipFlop(props)
+const RandomReveal = (props: RandomRevealProps) => {
+	const nextCharacters = useRandomReveal(props)
 
 	return <>{nextCharacters}</>
 }
 
-export { FlipFlop, useFlipFlop }
+export { RandomReveal, useRandomReveal }

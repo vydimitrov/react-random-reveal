@@ -1,5 +1,5 @@
 {
-  "name": "react-flip-flop",
+  "name": "react-random-reveal",
   "version": "1.0.0",
   "description": "",
   "main": "./lib/index.js",
@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/vydimitrov/react-flip-flop.git"
+    "url": "git+https://github.com/vydimitrov/react-random-reveal.git"
   },
   "keywords": [
     "React"
@@ -19,9 +19,9 @@
   "author": "Vasil Dimitrov",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/vydimitrov/react-flip-flop/issues"
+    "url": "https://github.com/vydimitrov/react-random-reveal/issues"
   },
-  "homepage": "https://github.com/vydimitrov/react-flip-flop#readme",
+  "homepage": "https://github.com/vydimitrov/react-random-reveal#readme",
   "peerDependencies": {
     "react": "^16.8.0",
     "react-dom": "^16.8.0"

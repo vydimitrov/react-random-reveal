@@ -1,1 +1,1 @@
-export { useFlipCharacters } from './useFlipCharacters'
+export { useRandomCharacters } from './useRandomCharacters'

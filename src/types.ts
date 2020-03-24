@@ -9,7 +9,7 @@ export type Characters = {
 	0: Character
 } & Array<Character>
 
-export type FlipFlopProps = {
+export type RandomRevealProps = {
 	isPlaying: boolean
 	duration: number
 	characters: Character

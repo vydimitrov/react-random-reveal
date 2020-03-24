@@ -11,7 +11,7 @@ type Data = {
 
 /**
  * returns an array of 2 numbers where the first one is
- * the duration of the flipping characters and the second one is the
+ * the duration of the random characters and the second one is the
  * the revealing duration
  */
 
@@ -51,7 +51,7 @@ export const getCharactersData = ({
 	ignoreCharacterSet,
 }: Data): CharactersData => {
 	const charactersArray = characters.toString().split('')
-	const [flippingSec, revealingSec] = getPartsTime(duration, revealDuration)
+	const [randomSec, revealingSec] = getPartsTime(duration, revealDuration)
 	const easingFunc = easings[revealEasing]
 	const interval = getEasingInterval(charactersArray, ignoreCharacterSet)
 	let step = 0
@@ -64,7 +64,7 @@ export const getCharactersData = ({
 		const revealTime = easingFunc(step * interval, 0, revealingSec, 1)
 		step += 1
 
-		return flippingSec + revealTime
+		return randomSec + revealTime
 	}
 
 	return charactersArray.map((character) => {
