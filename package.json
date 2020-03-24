@@ -35,11 +35,15 @@
     "install-peers-cli": "^2.1.1",
     "jest": "^24.9.0",
     "path": "^0.12.7",
+    "prettier": "^1.19.1",
     "react-test-renderer": "^16.8.0",
     "source-map-loader": "^0.2.4",
     "ts-loader": "^6.2.1",
     "typescript": "^3.8.3",
     "webpack": "^4.42.0",
     "webpack-cli": "^3.3.11"
+  },
+  "dependencies": {
+    "use-elapsed-time": "^1.1.5"
   }
 }

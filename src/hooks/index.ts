@@ -1,0 +1,1 @@
+export { useFlipCharacters } from './useFlipCharacters'
