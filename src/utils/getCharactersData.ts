@@ -1,12 +1,17 @@
-import { Easing, Character, CharactersData } from '../types'
 import { easings } from '.'
+import {
+	Easing,
+	Characters,
+	RevealCharacters,
+	CharactersData,
+} from '../types'
 
 type Data = {
-	characters: Character
+	characters: RevealCharacters
 	duration: number
 	revealDuration: number
 	revealEasing: Easing
-	ignoreCharacterSet: Array<Character>
+	ignoreCharacterSet: Characters
 }
 
 /**
@@ -30,12 +35,13 @@ const getPartsTime = (
 }
 
 const getEasingInterval = (
-	charactersArray: Array<string>,
-	ignoreCharacterSet: Array<Character>
+	charactersArray: Characters,
+	ignoreCharacterSet: Characters
 ): number => {
 	const charactersToAnimate = charactersArray.filter(
 		(character) => !ignoreCharacterSet.includes(character)
 	).length
+	
 	return 1 / (charactersToAnimate - 1)
 }
 
@@ -50,7 +56,9 @@ export const getCharactersData = ({
 	revealEasing,
 	ignoreCharacterSet,
 }: Data): CharactersData => {
-	const charactersArray = characters.toString().split('')
+	const charactersArray = Array.isArray(characters)
+		? characters
+		: characters.split('')
 	const [randomSec, revealingSec] = getPartsTime(duration, revealDuration)
 	const easingFunc = easings[revealEasing]
 	const interval = getEasingInterval(charactersArray, ignoreCharacterSet)

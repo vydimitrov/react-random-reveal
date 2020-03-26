@@ -1,13 +1,13 @@
 import { useMemo, useRef } from 'react'
 import { useElapsedTime } from 'use-elapsed-time'
-import { Characters, OnComplete, CharactersData } from '../types'
+import { CharactersRequired, OnComplete, CharactersData } from '../types'
 import { getRandomCharacter } from '../utils'
 
 type Data = {
 	isPlaying: boolean
 	speed: number
 	durationMilliseconds: number
-	characterSet: Characters
+	characterSet: CharactersRequired
 	onComplete: OnComplete
 	charactersData: CharactersData
 }

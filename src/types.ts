@@ -4,25 +4,27 @@ export type OnComplete = Config['onComplete']
 
 export type Easing = 'easeInQuad' | 'easeOutQuad' | 'linear' | 'random'
 
-export type Character = string | number
-export type Characters = {
+export type Character = string
+export type Characters = Array<Character>
+export type RevealCharacters = Character | Characters
+export type CharactersRequired = {
 	0: Character
-} & Array<Character>
+} & Characters
 
 export type RandomRevealProps = {
 	isPlaying: boolean
 	duration: number
-	characters: Character
+	characters: RevealCharacters
 	speed?: number
 	revealDuration?: number
 	revealEasing?: Easing
-	characterSet?: Characters
-	ignoreCharacterSet?: Array<Character>
+	characterSet?: CharactersRequired
+	ignoreCharacterSet?: Characters
 	onComplete?: OnComplete
 }
 
 export type CharacterData = {
-	character: string
+	character: Character
 	isIgnored: boolean
 	revealTime: number
 }

@@ -1,6 +1,7 @@
-import { Characters } from '../types'
+import { Characters, CharactersRequired } from '../types'
 
-export const defaultCharacterSet: Characters = [
+export const defaultIgnoreCharacterSet: Characters = []
+export const defaultCharacterSet: CharactersRequired = [
 	'a',
 	'b',
 	'c',

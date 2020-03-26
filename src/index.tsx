@@ -1,7 +1,11 @@
 import React, { useMemo } from 'react'
 import { RandomRevealProps, CharactersData } from './types'
 import { useRandomCharacters } from './hooks'
-import { defaultCharacterSet, getCharactersData } from './utils'
+import {
+	defaultCharacterSet,
+	defaultIgnoreCharacterSet,
+	getCharactersData,
+} from './utils'
 
 const useRandomReveal = (props: RandomRevealProps): string => {
 	const {
@@ -13,7 +17,7 @@ const useRandomReveal = (props: RandomRevealProps): string => {
 		revealDuration = 0.6,
 		revealEasing = 'linear',
 		characterSet = defaultCharacterSet,
-		ignoreCharacterSet = [],
+		ignoreCharacterSet = defaultIgnoreCharacterSet,
 	} = props
 
 	const durationMilliseconds = useMemo(() => duration * 1000, [duration])
