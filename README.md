@@ -6,7 +6,8 @@
 [![Codecov](https://img.shields.io/codecov/c/gh/vydimitrov/react-random-reveal)](https://codecov.io/gh/vydimitrov/react-random-reveal)
 [![npm bundle size](https://img.shields.io/bundlephobia/min/react-random-reveal)](https://bundlephobia.com/result?p=react-random-reveal)
 
--- description here --
+React component/hook to add a little thrill before revealing the truth. This effect is achieved via a character animation that shows random characters before revealing the text you want to emphasize. The library provides full control over the reveal run: its duration and easing can be freely adjusted.
+
 
 <img src="https://user-images.githubusercontent.com/10707142/77891767-c3332000-7271-11ea-9ba8-b2de048cad32.gif">
 
