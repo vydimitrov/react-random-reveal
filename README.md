@@ -1,7 +1,6 @@
 # React Random Reveal
 
 [![npm](https://img.shields.io/npm/v/react-random-reveal)](https://www.npmjs.com/package/react-random-reveal)
-[![npm](https://img.shields.io/npm/dw/react-random-reveal)](https://www.npmjs.com/package/react-random-reveal)
 [![GitHub Workflow Status](https://img.shields.io/github/workflow/status/vydimitrov/react-random-reveal/Codecov%20Coverage)](https://codecov.io/gh/vydimitrov/react-random-reveal)
 [![Codecov](https://img.shields.io/codecov/c/gh/vydimitrov/react-random-reveal)](https://codecov.io/gh/vydimitrov/react-random-reveal)
 [![npm bundle size](https://img.shields.io/bundlephobia/min/react-random-reveal)](https://bundlephobia.com/result?p=react-random-reveal)
