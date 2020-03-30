@@ -1,53 +1,53 @@
 {
-  "name": "react-random-reveal",
-  "version": "1.0.0",
-  "description": "",
-  "main": "./lib/index.js",
-  "scripts": {
-    "build": "webpack",
-    "prepare": "install-peers",
-    "test": "jest --collectCoverage=true",
-    "test-watch": "jest --watch"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/vydimitrov/react-random-reveal.git"
-  },
-  "keywords": [
-    "React"
-  ],
-  "author": "Vasil Dimitrov",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/vydimitrov/react-random-reveal/issues"
-  },
-  "homepage": "https://github.com/vydimitrov/react-random-reveal#readme",
-  "peerDependencies": {
-    "react": "^16.8.0",
-    "react-dom": "^16.8.0"
-  },
-  "devDependencies": {
-    "@testing-library/jest-dom": "^4.2.4",
-    "@testing-library/react": "^9.4.0",
-    "@types/jest": "^25.1.4",
-    "@types/node": "^12.12.31",
-    "@types/react": "^16.9.23",
-    "@types/react-dom": "^16.9.5",
-    "babel-jest": "^25.2.1",
-    "codecov": "^3.6.1",
-    "install-peers-cli": "^2.1.1",
-    "jest": "^25.2.1",
-    "path": "^0.12.7",
-    "prettier": "^1.19.1",
-    "react-test-renderer": "^16.8.0",
-    "source-map-loader": "^0.2.4",
-    "ts-jest": "^25.2.1",
-    "ts-loader": "^6.2.1",
-    "typescript": "^3.8.3",
-    "webpack": "^4.42.0",
-    "webpack-cli": "^3.3.11"
-  },
-  "dependencies": {
-    "use-elapsed-time": "^1.1.5"
-  }
+	"name": "react-random-reveal",
+	"version": "1.0.0",
+	"description": "React component/hook to add suspense before revealing the truth",
+	"main": "./lib/index.js",
+	"scripts": {
+		"build": "webpack",
+		"prepare": "install-peers",
+		"test": "jest --collectCoverage=true",
+		"test-watch": "jest --watch"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/vydimitrov/react-random-reveal.git"
+	},
+	"keywords": [
+		"React"
+	],
+	"author": "Vasil Dimitrov",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/vydimitrov/react-random-reveal/issues"
+	},
+	"homepage": "https://github.com/vydimitrov/react-random-reveal#readme",
+	"peerDependencies": {
+		"react": "^16.8.0",
+		"react-dom": "^16.8.0"
+	},
+	"devDependencies": {
+		"@testing-library/jest-dom": "^4.2.4",
+		"@testing-library/react": "^9.4.0",
+		"@types/jest": "^25.1.4",
+		"@types/node": "^12.12.31",
+		"@types/react": "^16.9.23",
+		"@types/react-dom": "^16.9.5",
+		"babel-jest": "^25.2.1",
+		"codecov": "^3.6.1",
+		"install-peers-cli": "^2.1.1",
+		"jest": "^25.2.1",
+		"path": "^0.12.7",
+		"prettier": "^1.19.1",
+		"react-test-renderer": "^16.8.0",
+		"source-map-loader": "^0.2.4",
+		"ts-jest": "^25.2.1",
+		"ts-loader": "^6.2.1",
+		"typescript": "^3.8.3",
+		"webpack": "^4.42.0",
+		"webpack-cli": "^3.3.11"
+	},
+	"dependencies": {
+		"use-elapsed-time": "^1.1.5"
+	}
 }
