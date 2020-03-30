@@ -1,7 +1,7 @@
 {
 	"name": "react-random-reveal",
 	"version": "1.0.0",
-	"description": "React component/hook to add suspense before revealing the truth",
+	"description": "React component/hook to add a little thrill before revealing the truth via random character animation",
 	"main": "./lib/index.js",
 	"scripts": {
 		"build": "webpack",
@@ -14,7 +14,14 @@
 		"url": "git+https://github.com/vydimitrov/react-random-reveal.git"
 	},
 	"keywords": [
-		"React"
+		"React",
+		"component",
+		"hook",
+		"random",
+		"reaveal",
+		"text",
+		"character",
+		"animation"
 	],
 	"author": "Vasil Dimitrov",
 	"license": "MIT",
@@ -49,5 +56,8 @@
 	},
 	"dependencies": {
 		"use-elapsed-time": "^1.1.5"
-	}
+	},
+	"files": [
+		"lib"
+	]
 }
