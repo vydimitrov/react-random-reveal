@@ -28,6 +28,19 @@ npm install react-random-reveal
 
 ## Demo
 
+#### Text demo
+[![Edit ecstatic-swirles-cslqw](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/ecstatic-swirles-cslqw?fontsize=14&hidenavigation=1&theme=dark)   
+
+#### Emoji demo
+[![Edit dry-pine-kp7ly](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/dry-pine-kp7ly?fontsize=14&hidenavigation=1&theme=dark)
+
+#### Words demo
+[![Edit quirky-field-8rr2w](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/quirky-field-8rr2w?fontsize=14&hidenavigation=1&theme=dark)
+
+  </div>
+</div>
+
+
 ## Basic usage
 
 As a component:
