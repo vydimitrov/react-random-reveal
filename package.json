@@ -1,6 +1,6 @@
 {
 	"name": "react-random-reveal",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"description": "React component/hook to add a little thrill before revealing the truth via random character animation",
 	"main": "./lib/index.js",
 	"scripts": {
