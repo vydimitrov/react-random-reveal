@@ -26,7 +26,7 @@ or
 npm install react-random-reveal
 ```
 
-## Demo
+## Demos
 
 <table>
   <thead>
