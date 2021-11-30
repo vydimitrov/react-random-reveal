@@ -1,5 +1,4 @@
 module.exports = {
-	preset: 'ts-jest',
-	testEnvironment: 'jsdom',
-	coverageDirectory: './coverage/',
+  preset: 'ts-jest',
+  testEnvironment: 'jsdom',
 }

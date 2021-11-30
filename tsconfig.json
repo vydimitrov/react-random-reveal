@@ -1,20 +1,17 @@
 {
-    "compilerOptions": {
-        "target": "es5",
-        "outDir": "lib",
-        "rootDir": "./src",
-        "sourceMap": true,
-        "noImplicitAny": true,
-        "module": "esnext",
-        "moduleResolution": "node",
-        "esModuleInterop": true,
-        "jsx": "react",
-        "allowSyntheticDefaultImports": true,
-        "lib": ["esnext", "dom"],
-        "strict": true,
-        "declaration": true,
-        "declarationDir": "./lib"
-    },
-    "include": ["src"],
-    "exclude": ["node_modules"]
+  "compilerOptions": {
+    "outDir": "lib",
+    "target": "es6",
+    "module": "esnext",
+    "lib": ["dom", "esnext"],
+    "jsx": "react-jsx",
+    "moduleResolution": "node",
+    "strict": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "isolatedModules": true,
+    "declaration": true
+  },
+  "include": ["src"],
+  "exclude": ["src/*.test.ts"]
 }
