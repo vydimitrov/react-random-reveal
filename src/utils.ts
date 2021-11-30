@@ -2,9 +2,7 @@ import {
   Props,
   CharactersRequired,
   Character,
-  Easing,
   Characters,
-  RevealCharacters,
   CharactersData,
 } from './types'
 import { easings } from './easing'
