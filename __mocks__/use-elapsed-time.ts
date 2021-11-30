@@ -1,15 +1,13 @@
-import { Config } from 'use-elapsed-time'
+import type { Props } from 'use-elapsed-time'
 
-let isPlaying = false
 let elapsedTime = 0
-let config: Config = {}
+let config: Props = { isPlaying: false }
 
 module.exports = {
-	useElapsedTime(isPlayingBool: boolean, configObj: Config): number {
+	useElapsedTime(configObj: Props) {
 		config = configObj
-		isPlaying = isPlayingBool
 
-		return elapsedTime
+		return { elapsedTime }
 	},
 
 	__setElapsedTime(time: number): void {
@@ -22,22 +20,22 @@ module.exports = {
 
 	__fireOnComplete(): void {
         // the compiler does not like optional chaining here
-		config.onComplete && config.onComplete()
+		config.onComplete && config.onComplete(100)
 	},
 
-	__getConfig(): Config {
+	__getConfig(): Props {
 		return config
 	},
 
 	__resetConfig(): void {
-		config = {}
+		config = { isPlaying: false }
 	},
 
 	__getIsPlaying(): boolean {
-		return isPlaying
+		return config.isPlaying
 	},
 
 	__resetIsPlaying(): void {
-		isPlaying = false
+		config.isPlaying = false
 	},
 }
