@@ -70,7 +70,7 @@ import { useRandomReveal } from 'react-random-reveal'
 const AddSuspenseComponent = () => {
   const characters = useRandomReveal({
     isPlaying: true,
-    duration={2}
+    duration: 2,
     characters: 'hello world',
   })
 
