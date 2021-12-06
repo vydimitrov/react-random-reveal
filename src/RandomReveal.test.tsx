@@ -94,7 +94,7 @@ describe('RandomReveal', () => {
 
       useElapsedTime.__setElapsedTime(7.8)
       rerender(getComponent())
-      expect(screen.getByText('dlg')).toBeVisible()
+      expect(screen.getByText('tzs')).toBeVisible()
 
       useElapsedTime.__setElapsedTime(8)
       rerender(getComponent())
@@ -144,12 +144,14 @@ describe('RandomReveal', () => {
 
     it('passes the config options to useElapsedTime', () => {
       const isPlaying = true
+      const updateInterval = 1.2
       const onComplete = jest.fn()
 
       render(
         <RandomReveal
           {...fixture}
           isPlaying={isPlaying}
+          updateInterval={updateInterval}
           onComplete={onComplete}
         />
       )
@@ -157,6 +159,7 @@ describe('RandomReveal', () => {
       expect(useElapsedTime.__getConfig()).toEqual({
         isPlaying,
         duration,
+        updateInterval,
         onComplete,
       })
 
@@ -174,7 +177,7 @@ describe('RandomReveal', () => {
         <RandomReveal {...fixture} characters={characters} revealDuration={7} />
       )
 
-      expect(screen.getByText('bnnnnnn')).toBeInTheDocument()
+      expect(screen.getByText('bnnnnnn')).toBeVisible()
     })
 
     it('reveals all characters in the end of the duration if the revealDuration is less than 0, i.e. revealDuration will be set to 0', () => {
@@ -193,11 +196,11 @@ describe('RandomReveal', () => {
 
       const { rerender } = render(getComponent())
 
-      expect(screen.getByText('nnnnnnn')).toBeInTheDocument()
+      expect(screen.getByText('nnnnnnn')).toBeVisible()
 
       useElapsedTime.__setElapsedTime(duration)
       rerender(getComponent())
-      expect(screen.getByText('be cool')).toBeInTheDocument()
+      expect(screen.getByText('be cool')).toBeVisible()
     })
 
     it('does not change the random characters if the component just rerenders, i.e. component rerenders based on external reason not useElpasedTime', () => {
@@ -212,47 +215,26 @@ describe('RandomReveal', () => {
 
       const { rerender } = render(getComponent())
 
-      expect(screen.getByText('dlg')).toBeInTheDocument()
+      expect(screen.getByText('dlg')).toBeVisible()
 
       useElapsedTime.__setElapsedTime(1)
       rerender(getComponent())
-      expect(screen.getByText('dlg')).toBeInTheDocument()
+      expect(screen.getByText('dlg')).toBeVisible()
     })
-  })
 
-  describe('speed testing', () => {
-    const renderComponentForFrame = (speed: number) => {
-      useElapsedTime.__setElapsedTime(0.016)
-      const characters = 'yes'
+    it('renders react components as characters to animate', () => {
+      const iconOne = 'Icon One'
+      const iconTwo = 'Icon Two'
+      const icons = [<span>{iconOne}</span>, <span>{iconTwo}</span>]
 
-      setMockMathRandom()
+      useElapsedTime.__setElapsedTime(duration)
 
-      const getComponent = () => (
-        <RandomReveal {...fixture} characters={characters} speed={speed} />
+      render(
+        <RandomReveal {...fixture} characters={icons} characterSet={icons} />
       )
 
-      const { rerender } = render(getComponent())
-      expect(screen.getByText('dlg')).toBeInTheDocument()
-
-      return (time: number, expectedCharacters: string): void => {
-        useElapsedTime.__setElapsedTime(time)
-        rerender(getComponent())
-
-        expect(screen.getByText(expectedCharacters)).toBeInTheDocument()
-      }
-    }
-
-    it('should get new random characters on every frame when the speed is 10', () => {
-      const renderNewFrame = renderComponentForFrame(10)
-      renderNewFrame(0.032, 'tzs')
-    })
-
-    it('should get new random characters on every third frame when the speed is 8', () => {
-      const renderNewFrame = renderComponentForFrame(8)
-
-      renderNewFrame(0.032, 'dlg')
-      renderNewFrame(0.048, 'dlg')
-      renderNewFrame(0.064, 'tzs')
+      expect(screen.getByText(iconOne)).toBeVisible()
+      expect(screen.getByText(iconTwo)).toBeVisible()
     })
   })
 
@@ -272,7 +254,7 @@ describe('RandomReveal', () => {
         const { getByText } = render(
           <RandomReveal {...fixture} revealEasing={easing} />
         )
-        expect(getByText('hello world')).toBeInTheDocument()
+        expect(getByText('hello world')).toBeVisible()
       }
     )
   })

@@ -1,65 +1,46 @@
-import { useMemo, useRef } from 'react'
+import { useRef, isValidElement, cloneElement } from 'react'
 import { useElapsedTime } from 'use-elapsed-time'
-import { Props, CharactersData } from './types'
+import { Characters, Props } from './types'
 import {
-  defaultCharacterSet,
-  defaultIgnoreCharacterSet,
   getCharactersData,
   getRandomCharacter,
+  DEFAULT_DURATION,
 } from './utils'
 
-export const useRandomReveal = ({
-  isPlaying,
-  characters,
-  onComplete,
-  duration = 2,
-  speed = 8,
-  revealDuration = 0.6,
-  revealEasing = 'linear',
-  characterSet = defaultCharacterSet,
-  ignoreCharacterSet = defaultIgnoreCharacterSet,
-}: Props): string => {
-  const prevTime = useRef(-1) // set to different value than 0 for first  time
-  const iterations = useRef(0)
-  const nextCharacters = useRef('')
-  const frames = useMemo(() => 11 - speed, [speed])
-  const charactersData = useMemo(
-    (): CharactersData =>
-      getCharactersData({
-        characters,
-        duration,
-        revealDuration,
-        revealEasing,
-        ignoreCharacterSet,
-      }),
-    [duration, characters, revealDuration, revealEasing, ignoreCharacterSet]
-  )
+export const useRandomReveal = (props: Props) => {
+  const prevTimeRef = useRef<number>()
+  const charactersRef = useRef<Characters>([])
 
-  const { elapsedTime } = useElapsedTime({ isPlaying, duration, onComplete })
+  const { elapsedTime } = useElapsedTime({
+    isPlaying: props.isPlaying,
+    duration: props.duration ?? DEFAULT_DURATION,
+    updateInterval: props.updateInterval ?? 0.065,
+    onComplete: props.onComplete,
+  })
 
-  if (prevTime.current === elapsedTime) {
-    return nextCharacters.current
+  if (prevTimeRef.current === elapsedTime) {
+    return charactersRef.current
   }
 
-  if (iterations.current % frames === 0 || elapsedTime === duration) {
-    let result = ''
-    const charactersDataLength = charactersData.length
+  prevTimeRef.current = elapsedTime
+  charactersRef.current = []
 
-    // the fastest way to iterate over an array
-    for (let i = 0; i < charactersDataLength; i++) {
-      const { character, isIgnored, revealTime } = charactersData[i]
+  const charactersData = getCharactersData(props)
 
-      result +=
-        isIgnored || elapsedTime >= revealTime
-          ? character
-          : getRandomCharacter(characterSet)
-    }
+  // the fastest way to iterate over an array
+  for (let i = 0; i < charactersData.length; i++) {
+    const { character, isIgnored, revealTime } = charactersData[i]
+    const nextCharacter =
+      isIgnored || elapsedTime >= revealTime
+        ? character
+        : getRandomCharacter(props.characterSet)
 
-    nextCharacters.current = result
+    charactersRef.current.push(
+      isValidElement(nextCharacter)
+        ? cloneElement(nextCharacter, { key: i })
+        : nextCharacter
+    )
   }
 
-  iterations.current += 1
-  prevTime.current = elapsedTime
-
-  return nextCharacters.current
+  return charactersRef.current
 }
