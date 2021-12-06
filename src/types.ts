@@ -9,7 +9,7 @@ export type RevealCharacters = Character | Characters
 export interface Props {
   /** Play and pause reveal animation */
   isPlaying: boolean
-  /** Characters to reveal in the end of the duration. These could be letters, numbers, words, emojis or components */
+  /** Characters to reveal in the end of the duration. These could be letters, numbers, words, emojis, words or components */
   characters: RevealCharacters
   /** Animation duration in seconds */
   duration: number
