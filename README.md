@@ -94,4 +94,4 @@ const AddSuspenseComponent = () => {
 
 ## Browser support
 
-The hook supports [all modern browsers](https://caniuse.com/?search=es6) targeting `es6`. Internet Explorer (IE) is not longer supported.
+We support [all modern browsers](https://caniuse.com/?search=es6) targeting `es6`. Internet Explorer (IE) is not longer supported.
