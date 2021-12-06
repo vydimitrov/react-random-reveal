@@ -7,7 +7,6 @@
 
 React component/hook to add a little thrill before revealing the truth. This effect is achieved via a character animation that shows random characters before revealing the text you want to emphasize. The library provides full control over the reveal run: its duration and easing can be freely adjusted.
 
-
 <img src="https://user-images.githubusercontent.com/10707142/77891767-c3332000-7271-11ea-9ba8-b2de048cad32.gif">
 
 - Animate random letters, numbers, words or even emojis
@@ -18,12 +17,6 @@ React component/hook to add a little thrill before revealing the truth. This eff
 
 ```
 yarn add react-random-reveal
-```
-
-or
-
-```
-npm install react-random-reveal
 ```
 
 ## Demos
@@ -65,12 +58,7 @@ As a component:
 import { RandomReveal } from 'react-random-reveal'
 
 const AddSuspenseComponent = () => (
-  <RandomReveal
-    isPlaying
-    duration={4.6}
-    revealDuration={0.5}
-    characters="hello world"
-  />
+  <RandomReveal isPlaying revealDuration={0.5} characters="hello world" />
 )
 ```
 
@@ -82,24 +70,25 @@ import { useRandomReveal } from 'react-random-reveal'
 const AddSuspenseComponent = () => {
   const characters = useRandomReveal({
     isPlaying: true,
-    duration: 4.6,
     revealDuration: 0.5,
-    characters: 'hello world'
+    characters: 'hello world',
   })
-  
+
   return characters
 }
 ```
 
 ## Props
-| Prop Name          | Type                                                            | Default                                    | Description                                                                                                                                                                                                                                                                     |
-|--------------------|-----------------------------------------------------------------|--------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| isPlaying          | boolean                                                         | _required_                                 | Play and pause animation.                                                                                                                                                                                                                                                        |
-| duration           | number                                                          | _required_                                 | Total duration in seconds. The duration includes the overall time random characters are shown plus the time for revealing the characters.                                                                                                                                                |
-| characters         | string \| Array\<string>                                        | _required_                                 | Characters to reveal in the end of the duration. These could be letters, numbers, words or emojis.                                                                                                                                                                                  |
-| speed              | number                                                          | 8                                          | Characters change speed from 0 to 10. At 10, new the characters will be shown on each frame, approximately every 16.6ms.                                                                                                                                                            |
-| revealDuration     | number                                                          | 0.6                                        | The duration to reveal all characters is represented as a fraction of the total duration. This is a number between 0 and 1. When set to 0, all characters will be revealed in the end of the duration at once. When set to 1, characters will start revealing from the beginning of the duration.  |
-| revealEasing       |  'linear'  \| 'easeInQuad'  \| 'easeOutQuad'  \| 'random'       | linear                                     | The easing function used to reveal characters during the reveal duration.                                                                                                                                                                                                       |
-| characterSet       | Array\<string>                                                  | English alphabet: ['a', 'b', 'c', ... 'z'] | Characters that will be used during the random characters run.                                                                                                                                                                                                                   |
-| ignoreCharacterSet | Array\<string>                                                  | -                                          | Characters that won't be animated and will always be revealed. Can be used to ignore animating _space_ or any special characters.                                                                                                                                               |
-| onComplete         | function(): undefined \| [shouldRepeat: boolean, delay: number] | -                                          | On complete handler. It can be used to repeat the animation by returning an array where the first element  `shouldRepeat` indicates if the loop should start over and second element  `delay` specifies the delay before looping again in milliseconds.                         |
+
+| Prop Name | Type    | Default    | Description               |
+| --------- | ------- | ---------- | ------------------------- |
+| isPlaying | boolean | _required_ | Play and pause animation. |
+
+| characters | string \| Array\<ReactNode> | _required_ | Characters to reveal in the end of the duration. These could be letters, numbers, words, emojis or react component |
+| duration | number | 2 | Total duration in seconds. The duration includes the overall time random characters are shown plus the time for revealing the characters |
+| updateInterval | number | 0.065 | Update interval in seconds. Determines how often the characters will change. When set to 0 the value will update on each key frame |
+| revealDuration | number | 0.6 | The duration to reveal all characters is represented as a fraction of the total duration. This is a number between 0 and 1. When set to 0, all characters will be revealed in the end of the duration at once. When set to 1, characters will start revealing from the beginning of the duration |
+| revealEasing | 'linear' \| 'easeInQuad' \| 'easeOutQuad' \| 'random' | linear | The easing function used to reveal characters during the reveal duration |
+| characterSet | Array\<ReactNode> | English alphabet: ['a', 'b', 'c', ... 'z'] | Characters that will be used during the random characters run |
+| ignoreCharacterSet | Array\<string> | - | Characters that won't be animated and will always be revealed. Can be used to ignore animating _space_ or any special characters. |
+| onComplete | () => void \| { shouldRepeat: boolean, delay: number } | - | The callback is fired when the duration is reached. It can be used to restart the animation by returning an object with the following params: `shouldRepeat` - indicates if the loop should start over; `delay` - delay before looping again in seconds |
