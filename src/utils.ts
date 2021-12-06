@@ -83,10 +83,9 @@ export const getCharactersData = ({
   }
 
   return charactersArray.map((character) => {
-    const isIgnored =
-      !!ignoreCharacterSet?.find(
-        (ignoreCharacter) => ignoreCharacter === character
-      ) ?? false
+    const isIgnored = !!ignoreCharacterSet?.find(
+      (ignoreCharacter) => ignoreCharacter === character
+    )
 
     return {
       character,
