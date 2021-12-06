@@ -1,7 +1,6 @@
 import { Props, Characters } from './types'
 import { easing, getEasingInterval } from './easing'
 
-export const DEFAULT_DURATION = 2
 const DEFAULT_CHARACTER_SET = [
   'a',
   'b',
@@ -58,7 +57,7 @@ const getPartsTime = (duration: number, revealDuration: number) => {
 
 export const getCharactersData = ({
   characters,
-  duration = DEFAULT_DURATION,
+  duration,
   revealDuration = 0.6,
   revealEasing = 'linear',
   ignoreCharacterSet,
