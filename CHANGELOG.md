@@ -1,6 +1,6 @@
 # Change Log
 
-## 2.0.0 ( December 6th, 2021)
+## 2.0.0 ( December 8th, 2021)
 
 **New features:**
 We can now animate React components as well.
