@@ -5,13 +5,13 @@
 [![Codecov](https://img.shields.io/codecov/c/gh/vydimitrov/react-random-reveal)](https://codecov.io/gh/vydimitrov/react-random-reveal)
 [![npm bundle size](https://img.shields.io/bundlephobia/minzip/react-random-reveal)](https://bundlephobia.com/result?p=react-random-reveal)
 
-React component/hook to add a little thrill before revealing the truth. This effect is achieved via a character animation that shows random characters before revealing the text you want to emphasize. The library provides full control over the reveal run: its duration and easing can be freely adjusted.
+React/React Native component and hook to add a little thrill before revealing the truth. This effect is achieved via a character animation that shows random characters before revealing the text you want to emphasize. The library provides full control over the reveal run: its duration and easing can be freely adjusted.
 
 <img src="https://user-images.githubusercontent.com/10707142/77891767-c3332000-7271-11ea-9ba8-b2de048cad32.gif">
 
-- Animate random letters, numbers, emojis, words or components
-- Performance optimized with single `requestAnimationFrame` loop to animate the random characters (no `setInterval` used)
-- Built with TypeScript
+📜 Animate random letters, numbers, emojis, words or components  
+🏆 Performance optimized with single `requestAnimationFrame` loop to animate the random characters (no `setInterval` used)  
+📱 React Native support for iOS and Android  
 
 ## Installation
 
@@ -27,6 +27,7 @@ yarn add react-random-reveal
       <th>Text Demo</th>
       <th>Emoji Demo</th>
       <th>Words Demo</th>
+      <th>React Native</th>
     </tr>
   </thead>
   <tbody>
@@ -44,6 +45,11 @@ yarn add react-random-reveal
       <td>
         <a href="https://codesandbox.io/s/quirky-field-8rr2w?fontsize=14&hidenavigation=1&theme=dark">
           <img alt="Edit 8rr2w" src="https://codesandbox.io/static/img/play-codesandbox.svg">
+        </a>
+      </td>
+       <td>
+        <a href="https://snack.expo.dev/@dimitrov/react-random-reveal">
+          Expo Snack
         </a>
       </td>
     </tr>
