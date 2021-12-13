@@ -31,7 +31,10 @@
     "reveal",
     "text",
     "character",
-    "animation"
+    "animation",
+    "ios",
+    "android",
+    "react-native"
   ],
   "bugs": {
     "url": "https://github.com/vydimitrov/react-random-reveal/issues"
