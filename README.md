@@ -10,7 +10,7 @@ React/React Native component and hook to add a little thrill before revealing th
 <img src="https://user-images.githubusercontent.com/10707142/77891767-c3332000-7271-11ea-9ba8-b2de048cad32.gif">
 
 📜 Animate random letters, numbers, emojis, words or components  
-🏆 Performance optimized with single `requestAnimationFrame` loop to animate the random characters (no `setInterval` used)  
+🏆 Performance optimized with single `requestAnimationFrame` loop to animate the characters
 📱 React Native support for iOS and Android  
 
 ## Installation
