@@ -71,7 +71,7 @@ export const getCharactersData = ({
   let step = 0
 
   const getRevealTime = (isIgnored: boolean): number => {
-    if (isIgnored || revealDuration === 0) {
+    if (isIgnored || revealDuration === 0 || charactersArray.length === 1) {
       return duration
     }
 
